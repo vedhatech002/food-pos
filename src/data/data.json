@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Masala Dosa",
+      "price": 120,
+      "description": "Thin crispy crepe filled with spiced potatoes",
+      "category": "South Indian",
+      "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/1ee5429496a5e7fa5aeca617d8277c9b"
+    },
+    {
+      "id": "2",
+      "name": "Idli",
+      "price": 20,
+      "description": "Steamed rice cakes served with sambar and chutney",
+      "category": "South Indian",
+      "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/260f40c65ff8bc28415c54db4a59ee6b"
+    },
+    {
+      "id": "3",
+      "name": "Vada",
+      "price": 12,
+      "description": "Deep-fried lentil donuts served with sambar and chutney",
+      "category": "South Indian",
+      "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/4264110ac2b3b157db0f5958063e2c0f"
+    },
+    {
+      "id": "4",
+      "name": "Biryani",
+      "price": 180,
+      "description": "Fragrant rice dish cooked with spices, meat, and/or vegetables",
+      "category": "South Indian",
+      "img": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/f594f4f63d3e00e93203f02d40e38d24"
+    }
+  ]
+}
