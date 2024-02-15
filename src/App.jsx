@@ -4,10 +4,16 @@ import Header from "./components/Header";
 import Body from "./components/Body";
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState(null);
+
+  const handleInput = (e) => {
+    setSearchQuery(e.target.value);
+  };
+  console.log();
   return (
     <>
-      <Header />
-      <Body />
+      <Header handleSearch={handleInput} />
+      <Body searchQuery={searchQuery} />
     </>
   );
 }

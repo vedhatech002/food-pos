@@ -4,7 +4,7 @@ import { useContext } from "react";
 
 const CartItem = (props) => {
   const { data } = props;
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(data.quantity);
 
   const { cartDatas, setCart } = useContext(CartContext);
 
@@ -15,21 +15,25 @@ const CartItem = (props) => {
     const updateCart = cartDatas.map((el) => {
       if (el.id === data.id) {
         el.quantity = data.quantity + 1;
+        // el.quantity = quantity;
+        el.totalAmount = data.price * data.quantity;
       }
       return el;
     });
     setCart(updateCart);
     // console.log(updateCart);
-    console.log(cartDatas);
   };
   const decrement = () => {
-    setQuantity(quantity !== 0 ? quantity - 1 : 0);
-    data.quantity = data.quantity !== 0 ? data.quantity - 1 : 0;
-    // const updateCart = cartDatas.filter(el=>el.id )
+    setQuantity((pre) => (pre > 1 ? pre - 1 : 0));
+    // setQuantity(quantity !== 0 ? quantity - 1 : 0);
+    data.quantity = data.quantity > 1 ? data.quantity - 1 : 0;
+    // data.totalAmount = data.price * data.quantity;
+    // // const updateCart = cartDatas.filter(el=>el.id )
     if (data.quantity !== 0) {
       const updateCart = cartDatas.map((el) => {
         if (el.id === data.id) {
-          el.quantity = data.quantity - 1;
+          el.quantity = data.quantity;
+          el.totalAmount = data.price * data.quantity;
         }
         return el;
       });
@@ -39,7 +43,7 @@ const CartItem = (props) => {
       setCart(updateCart);
     }
   };
-  console.log(data);
+  console.log(cartDatas);
   return (
     <div className="bg-[#d8e6e9] p-1.5 rounded-lg flex gap-2 items-center">
       <div className="w-[40px] drop-shadow-lg">
@@ -51,9 +55,7 @@ const CartItem = (props) => {
       <div className="flex  justify-between w-full">
         <div>
           <h6 className="text-sm font-semibold">{data.name}</h6>
-          <span className="text-xs font-bold">
-            ₹{data.totalAmount * quantity}
-          </span>
+          <span className="text-xs font-bold">₹{data.totalAmount}</span>
         </div>
         <div>
           <h6 className="text-sm font-bold">Quantity</h6>
